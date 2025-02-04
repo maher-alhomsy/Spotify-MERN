@@ -14,6 +14,8 @@ config();
 const app = exporess();
 const PORT = process.env.PORT;
 
+app.use(exporess.json());
+
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/songs', songRoutes);
