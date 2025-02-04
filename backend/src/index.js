@@ -1,12 +1,13 @@
 import exporess from 'express';
 import { config } from 'dotenv';
 
-import userRoutes from './routes/user.route';
-import authRoutes from './routes/auth.route';
-import songRoutes from './routes/song.route';
-import adminRoutes from './routes/admin.route';
-import albumRoutes from './routes/admin.route';
-import statisRoutes from './routes/statis.route';
+import { connectDB } from './lib/db.js';
+import userRoutes from './routes/user.route.js';
+import authRoutes from './routes/auth.route.js';
+import songRoutes from './routes/song.route.js';
+import adminRoutes from './routes/admin.route.js';
+import albumRoutes from './routes/admin.route.js';
+import statisRoutes from './routes/statis.route.js';
 
 config();
 
@@ -22,4 +23,6 @@ app.use('/api/stats', statisRoutes);
 
 app.listen(PORT, () => {
   console.log('Server listening on port ' + PORT);
+
+  connectDB();
 });
