@@ -1,5 +1,6 @@
 import exporess from 'express';
 import { config } from 'dotenv';
+import { clerkMiddleware } from '@clerk/express';
 
 import { connectDB } from './lib/db.js';
 import userRoutes from './routes/user.route.js';
@@ -15,6 +16,7 @@ const app = exporess();
 const PORT = process.env.PORT;
 
 app.use(exporess.json());
+app.use(clerkMiddleware());
 
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
