@@ -1,4 +1,5 @@
 import path from 'path';
+import cors from 'cors';
 import exporess from 'express';
 import { config } from 'dotenv';
 import fileUpload from 'express-fileupload';
@@ -28,6 +29,8 @@ app.use(
     },
   })
 );
+
+app.use(cors());
 
 app.use(exporess.json());
 app.use(clerkMiddleware());
