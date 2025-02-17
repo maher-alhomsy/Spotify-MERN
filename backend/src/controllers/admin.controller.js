@@ -1,6 +1,6 @@
-import cloudinary from '../lib/cloudinary';
-import { Song } from '../model/song.model';
-import { Album } from '../model/album.model';
+import cloudinary from '../lib/cloudinary.js';
+import { Song } from '../model/song.model.js';
+import { Album } from '../model/album.model.js';
 
 const uploadToCloudinary = async (file) => {
   console.log(file);
@@ -111,4 +111,8 @@ export const deleteAlbum = async (req, res, next) => {
 
     next(error);
   }
+};
+
+export const checkAdmin = async (req, res, next) => {
+  res.status(200).json({ admin: true });
 };
