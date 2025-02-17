@@ -9,7 +9,7 @@ import userRoutes from './routes/user.route.js';
 import authRoutes from './routes/auth.route.js';
 import songRoutes from './routes/song.route.js';
 import adminRoutes from './routes/admin.route.js';
-import albumRoutes from './routes/admin.route.js';
+import albumRoutes from './routes/album.route.js';
 import statisRoutes from './routes/statis.route.js';
 
 config();
