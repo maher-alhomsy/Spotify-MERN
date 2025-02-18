@@ -5,6 +5,7 @@ import {
   ResizableHandle,
   ResizablePanelGroup,
 } from '@/components/ui/resizable';
+import LeftSidebar from '@/components/LeftSidebar';
 
 const Main = () => {
   const isMobile = false;
@@ -20,7 +21,7 @@ const Main = () => {
           defaultSize={20}
           minSize={isMobile ? 0 : 10}
         >
-          Left side bar
+          <LeftSidebar />
         </ResizablePanel>
 
         <ResizableHandle className="w-2 bg-black rounded-lg transition-colors" />
